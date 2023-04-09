@@ -1,3 +1,5 @@
+import { EventEmitter } from '@angular/core';
+import { Output } from '@angular/core';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +9,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class Exercice1EnfantComponent implements OnInit {
 
+  @Output()  private selectedAction : EventEmitter<number> = new EventEmitter<number>()
   constructor() { }
 
   ngOnInit() {
   }
 
+
+  public changeAction(action){
+    this.selectedAction.emit(action)
+  }
 }

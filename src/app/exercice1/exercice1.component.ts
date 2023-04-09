@@ -11,4 +11,14 @@ export class Exercice1Component implements OnInit {
   constructor() {}
 
   ngOnInit() {}
+
+
+  public selectValeur(action): void{
+    console.log(action);
+    if (action === 'plus') {
+      this.result += 1
+    } else {
+      this.result -= 1
+    }
+  }
 }
